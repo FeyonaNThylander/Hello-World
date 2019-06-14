@@ -11,10 +11,11 @@ namespace HelloWorldTest.Controllers
     public class UserController : Controller
     {
         [HttpPost("[action]")]
-        public void Input([FromBody]string value)
+        public string Input([FromBody]User value)
         {
-            var message = "The server says Hello " + value;
-            //return message;
+            var userInput = value.UserInput;
+            var message = "The server says Hello " + userInput;
+            return message;
         }
 
      
